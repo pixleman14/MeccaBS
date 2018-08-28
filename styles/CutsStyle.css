@@ -1,0 +1,160 @@
+/* Tiny reset thingy */
+body,html{margin:0;padding:0;}
+
+h1:hover{color: #D30C55;}
+
+h1{color: white;}
+
+#WhatMarco{display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  }
+
+.maps{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;}
+
+
+#navbar
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #FF0000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  line-height: 0.2;
+  font-size: 19px;
+}
+
+.btn
+{
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*border-style: solid;
+  border-width: 5px;*/
+  justify-content: center;
+  background-color: #000f4b;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.btn:hover{background-color: #2f3f86;}
+
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+  width: 100%;
+
+  /* For text formatting. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+.static {
+  background: #AF9075;
+  box-shadow:3px 7px 18px rgba(0, 0, 0, 0.5);}
+
+/*help insert images*/
+.bg1::after {background-image: url('http://www.barbershopsnearme.com/images/barber-shop-near-me.jpg');}
+
+.bg2::after {background-image: url('https://hips.hearstapps.com/esqnl.h-cdn.co/assets/15/50/980x488/1449752647-haarbarbaar-opent-tweede-locatie_img900.jpg?resize=480:*');}
+
+.bg3::after{background-image: url('http://getwallpapers.com/wallpaper/full/e/6/0/430472.jpg');}
+
+body{
+  margin: 0;
+  background-color: #AF9075;
+  overflow: hidden;}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  margin-bottom: 15%;
+  text-align: center;}
+
+
+#footer{
+  display: flex;
+  flex-direction: column;
+  height: 25%;}
+
+
+#test{
+  display: flex;
+  justify-content: flex-start;
+  padding: 1%;}
+
+.aboutDesc
+{
+  display: flex;
+  justify-content: center;
+
+}
+.entire
+{
+  padding: 2%;
+}
+#vertical
+{
+  display: flex;
+  justify-content: center;
+}
+.descFormat
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
