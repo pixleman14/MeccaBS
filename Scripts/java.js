@@ -12,21 +12,21 @@ function clickFunc1()
 }
 function clickFunc2()
 {
-  window.location.href="Recreation"
+  window.location.href="Cuts"
 }
 function clickFunc3()
 {
-  window.location.href="Photo"
+  window.location.href="Social Media"
 }
 function clickFunc4()
 {
-  window.location.href="Outlets"
+  window.location.href="Appointments"
 }
 function clickFunc5()
 {
-  window.location.href="Food"
+  window.location.href="Location"
 }
 function clickFunc6()
 {
-  window.location.href="Mainpage"
+  window.location.href="Prices"
 }

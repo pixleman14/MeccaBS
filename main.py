@@ -19,86 +19,86 @@ jinja_environment = jinja2.Environment(
 class Home(webapp2.RequestHandler):
     def get(self):  # for a get request
         logging.info('in get self')
-        mypage = env.get_template('templates/index.html')
+        mypage = env.get_template('templates/Home.html')
         self.response.write(mypage.render())
 
-class Food(webapp2.RequestHandler):
+class Cuts(webapp2.RequestHandler):
     def get(self):  # for a get request
         logging.info('in get self')
-        mypage = env.get_template('templates/index-5.html')
+        mypage = env.get_template('templates/Cuts.html')
         self.response.write(mypage.render())
 
-class Outlets(webapp2.RequestHandler):
+class SocialMedia(webapp2.RequestHandler):
     def get(self):  # for a get request
         logging.info('in get self')
-        mypage = env.get_template('templates/index-4.html')
+        mypage = env.get_template('templates/SocialMedia.html')
         self.response.write(mypage.render())
 
-class Photo(webapp2.RequestHandler):
+class Appointments(webapp2.RequestHandler):
     def get(self):  # for a get request
         logging.info('in get self')
-        mypage = env.get_template('templates/index-3.html')
+        mypage = env.get_template('templates/Appointments.html')
         self.response.write(mypage.render())
 
-class Recreation(webapp2.RequestHandler):
+class Prices(webapp2.RequestHandler):
     def get(self):  # for a get request
         logging.info('in get self')
-        mypage = env.get_template('templates/index-2.html')
+        mypage = env.get_template('templates/Prices.html')
         self.response.write(mypage.render())
 
 
 #the start of a mess
 
 
-class UserSearch(ndb.Model):
-    term = ndb.StringProperty(required=True)
-    count = ndb.IntegerProperty(required=True)
-    created_at = ndb.DateTimeProperty(auto_now_add=True)
-    updated_at = ndb.DateTimeProperty(auto_now=True)
+#class UserSearch(ndb.Model):
+#    term = ndb.StringProperty(required=True)
+#    count = ndb.IntegerProperty(required=True)
+#    created_at = ndb.DateTimeProperty(auto_now_add=True)
+#    updated_at = ndb.DateTimeProperty(auto_now=True)
 
-    def increment(self):
-        self.count = self.count + 1
+#    def increment(self):
+#        self.count = self.count + 1
 
-    def encode_term(self):
-        return urllib.urlencode({'q': self.term})
+#    def encode_term(self):
+#        return urllib.urlencode({'q': self.term})
 
 
-@ndb.transactional
-def updateSearchCount(term):
-    lterm = term.lower()
-    # create key
-    key = ndb.Key('UserSearch', lterm)
-    # Read database
-    search = key.get()
-    if not search:
+#@ndb.transactional
+#def updateSearchCount(term):
+#    lterm = term.lower()
+#    # create key
+#    key = ndb.Key('UserSearch', lterm)
+#    # Read database
+#    search = key.get()
+#    if not search:
         # Create if not there
-        search = UserSearch(key=key, count=0, term=term)
+#        search = UserSearch(key=key, count=0, term=term)
     # Update count
-    search.increment()
+#    search.increment()
     # Save
-    search.put()
+#    search.put()
 
-def getRecentSearches():
-    return UserSearch.query().order(-UserSearch.created_at).fetch(limit=10)
+#def getRecentSearches():
+#    return UserSearch.query().order(-UserSearch.created_at).fetch(limit=10)
 
-def getPopularSearches():
-    return UserSearch.query().order(-UserSearch.count).fetch(limit=10)
+#def getPopularSearches():
+#    return UserSearch.query().order(-UserSearch.count).fetch(limit=10)
 
-class RecentPage(webapp2.RequestHandler):
-    def get(self):
-        searches = getRecentSearches()
+#class RecentPage(webapp2.RequestHandler):
+#    def get(self):
+#        searches = getRecentSearches()
 
-        template = jinja_environment.get_template('recent.html')
-        variables = {'searches': searches}
-        self.response.write(template.render(variables))
+#        template = jinja_environment.get_template('recent.html')
+#        variables = {'searches': searches}
+#        self.response.write(template.render(variables))
 
-class PopularPage(webapp2.RequestHandler):
-    def get(self):
-        searches = getPopularSearches()
-
-        template = jinja_environment.get_template('popular.html')
-        variables = {'searches': searches}
-        self.response.write(template.render(variables))
+#class PopularPage(webapp2.RequestHandler):
+#    def get(self):
+#        searches = getPopularSearches()
+#
+#        template = jinja_environment.get_template('popular.html')
+#        variables = {'searches': searches}
+#        self.response.write(template.render(variables))
 
 
 # class Business:
@@ -107,37 +107,36 @@ class PopularPage(webapp2.RequestHandler):
 #     review_count = 0
 #     price = ""
 
-class MainPage(webapp2.RequestHandler):
-
-    def get(self):
-        search_term = self.request.get('q')
-        if search_term:
-            lterm = search_term.lower()
+#class MainPage(webapp2.RequestHandler):
+#
+#    def get(self):
+#        search_term = self.request.get('q')
+#        if search_term:
+#            lterm = search_term.lower()
             # create key
-            key = ndb.Key('UserSearch', lterm)
+#            key = ndb.Key('UserSearch', lterm)
             # Read database
-            search = key.get()
-            if not search:
+#            search = key.get()
+#            if not search:
                 # Create if not there
-                search = UserSearch(
-                    key=key, count=0,
-                    term=search_term)
+#                search = UserSearch(
+##                    term=search_term)
             # Update count
-            search.increment()
+#            search.increment()
             # Save
-            search.put()
-        else:
-            search_term = "coffee"
-        params = {'term': search_term,
-                  'location': 'San Marcos, California'}
-        form_data = urllib.urlencode(params)
-        api_url = 'https://api.yelp.com/v3/businesses/search?' + form_data
+#            search.put()
+#        else:
+#            search_term = "coffee"
+#        params = {'term': search_term,
+#                  'location': 'San Marcos, California'}
+#        form_data = urllib.urlencode(params)
+#        api_url = 'https://api.yelp.com/v3/businesses/search?' + form_data
 
         # Add your own API key
-        request = urllib2.Request(api_url, headers={"Authorization" : "Bearer mcj0Yvg7eMof_REdJ65A5c68tugGNvj3DSTDmqwZn3bCuimqbCQr9gr_AAXu2pIqMhs7sDGipGLpFAoKaPIQTM5VH4kV3tep5JIrqvbta1QRmtPezifGfTiizAhzW3Yx"})
-        response = urllib2.urlopen(request).read()
+#        request = urllib2.Request(api_url, headers={"Authorization" : "Bearer mcj0Yvg7eMof_REdJ65A5c68tugGNvj3DSTDmqwZn3bCuimqbCQr9gr_AAXu2pIqMhs7sDGipGLpFAoKaPIQTM5VH4kV3tep5JIrqvbta1QRmtPezifGfTiizAhzW3Yx"})
+#        response = urllib2.urlopen(request).read()
 
-        content = json.loads(response)
+#        content = json.loads(response)
         # logging.info(content)
         # businesses = content['businesses']
         # logging.info("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
@@ -147,6 +146,14 @@ class MainPage(webapp2.RequestHandler):
         #
         # logging.info("SHOULD BE SAME THING")
         # logging.info(content['businesses'][0]['name'])
+
+
+
+
+
+#this is the part that actually works and the one above does
+#as well but the one down here  is much more easier
+
         logging.info(len(content))
         i = 0
 
@@ -164,15 +171,8 @@ class MainPage(webapp2.RequestHandler):
             'review_count': content['businesses'][i]['review_count'],
             'price': content['businesses'][i]['price']
             }
-            # business.name = content['businesses'][i]['name']
             logging.info(business['name'])
-            # business.rating = content['businesses'][i]['rating']
-            # logging.info(business.rating)
-            # business.review_count = content['businesses'][i]['review_count']
-            # logging.info(business.review_count)
-            # business.price = content['businesses'][i]['price']
-            # logging.info(business.price)
-            # business_array.append(business)
+
             business_array.append(business)
             i += 1
             logging.info("********")
@@ -189,11 +189,11 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', Home),#1
-    ('/Food', Food),#5
-    ('/Outlets', Outlets),#4
-    ('/Photo', Photo),#3
-    ('/Recreation', Recreation),#2
-    ('/Mainpage', MainPage),
+    ('/Cuts', Cuts),#5
+    ('/SocialMedia', SocialMedia),#4
+    ('/Appointments', Appointments),#3
+    ('/Location', location),#2
+    ('/Prices', Prices),
     ('/recent', RecentPage),
     ('/popular', PopularPage),
 ], debug=True)

@@ -5,8 +5,7 @@ h1:hover{color: #D30C55;}
 
 h1{color: white;}
 
-#WhatMarco{
-  display: flex;
+#WhatMarco{display: flex;
   flex-direction:column;
   align-items: flex-start;
   }
