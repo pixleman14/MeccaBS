@@ -16,7 +16,7 @@ function clickFunc2()
 }
 function clickFunc3()
 {
-  window.location.href="Social Media"
+  window.location.href="SocialMedia"
 }
 function clickFunc4()
 {

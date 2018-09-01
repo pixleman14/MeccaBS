@@ -196,4 +196,5 @@ app = webapp2.WSGIApplication([
     ('/Prices', Prices),
     ('/recent', RecentPage),
     ('/popular', PopularPage),
+    #still have a mainpage location here, just deleted it by "accident"
 ], debug=True)
