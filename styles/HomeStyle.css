@@ -159,3 +159,7 @@ body{
   justify-content: center;
   flex-direction: column;
 }
+.changeStyle
+{
+  background-color: red;
+  color: white;
