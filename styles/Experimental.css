@@ -1,0 +1,146 @@
+body
+{
+  margin: 0;
+}
+#navbar
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #072930;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  line-height: 0.2;
+  font-size: 19px;
+}
+.btn
+{
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*border-style: solid;
+  border-width: 5px;*/
+  justify-content: center;
+ background-color: #072930
+ ;
+  color: #F09714;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+}
+.btn:hover
+{
+  transition: background-color 0.3s ease-out;
+  background-color: #51696e;
+}
+.changeStyle
+{
+  background-color: #873834;
+  color: white;
+  transition: background-color 0.3s ease-out;
+}
+.wrapper
+{
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+
+.section
+{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F0EAF1;
+  text-shadow: 0 0 5px #000;
+}
+.smallSection
+{
+  position: relative;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F0EAF1;
+  text-shadow: 0 0 5px #000;
+}
+#smallSection2
+{
+  background: #1f3e44;
+}
+#smallSection3
+{
+  background: #385359;
+}
+#smallSection4
+{
+  background: #51696e;
+}
+#smallSection5
+{
+  background: #873834;
+}
+#smallSection6
+{
+  background: #9a403c;
+}
+#smallSection7
+{
+  background: #ad4843;
+}
+#smallSection8
+{
+  background: #c1504b;
+}
+.parallax::after
+{
+  content: " ";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -4px;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+.static
+{
+  background: #072930;
+  box-shadow:3px 7px 18px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+.bg1::after
+{
+  background-image: url('https://images.wallpaperscraft.com/image/buildings_skyscrapers_view_from_below_sky_118887_3840x2160.jpg');
+}
+
+.bg2::after
+{
+  background-image: url('https://images.wallpaperscraft.com/image/bridge_minimalism_railing_122663_3840x2160.jpg');
+}
+.bg3::after
+{
+  background-image: url('http://4.bp.blogspot.com/-3zxSN03Nah4/Vjy4F2uupiI/AAAAAAAAALM/poOFpM1H4Zo/s1600/DaveNBusters-At-Night800.jpg');
+}
+::-webkit-scrollbar
+{
+  width: 8px;
+  background: #A3A7B0;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #F09714;
+}
+::-webkit-scrollbar-thumb:hover
+{
+  background: #f4b65a;
+}
