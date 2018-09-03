@@ -46,6 +46,11 @@ class Prices(webapp2.RequestHandler):
         mypage = env.get_template('templates/Prices.html')
         self.response.write(mypage.render())
 
+class Location(webapp2.RequestHandler):
+    def get(self):  # for a get request
+        logging.info('in get self')
+        mypage = env.get_template('templates/Location.html')
+        self.response.write(mypage.render())
 
 #the start of a mess
 
@@ -154,37 +159,37 @@ class Prices(webapp2.RequestHandler):
 #this is the part that actually works and the one above does
 #as well but the one down here  is much more easier
 
-        logging.info(len(content))
-        i = 0
+#logging.info(len(content))
+        #i = 0
 
         # changed business_name from string to array, and appending
 
-        business_array = []
+#        business_array = []
         # logging.info(business_array)
         # logging.info(str(test))
 
-        while i < len(content['businesses']):
+#        while i < len(content['businesses']):
             # business = Business()
-            business = {
-            'name': content['businesses'][i]['name'],
-            'rating': content['businesses'][i]['rating'],
-            'review_count': content['businesses'][i]['review_count'],
-            'price': content['businesses'][i]['price']
-            }
-            logging.info(business['name'])
+#            business = {
+#            'name': content['businesses'][i]['name'],
+#            'rating': content['businesses'][i]['rating'],
+#            'review_count': content['businesses'][i]['review_count'],
+#            'price': content['businesses'][i]['price']
+#            }
+#            logging.info(business['name'])
 
-            business_array.append(business)
-            i += 1
-            logging.info("********")
+#            business_array.append(business)
+#            i += 1
+#            logging.info("********")
 
-        logging.info("===========================================================")
-        logging.info(business_array)
+#        logging.info("===========================================================")
+#        logging.info(business_array)
 
-        template = jinja_environment.get_template('main.html')
-        variables = {'content': content,
-                     'q': search_term,
-                     'businesses': business_array}
-        self.response.write(template.render(variables))
+#        template = jinja_environment.get_template('main.html')
+#        variables = {'content': content,
+#                     'q': search_term,
+#                     'businesses': business_array}
+#        self.response.write(template.render(variables))
 
 
 app = webapp2.WSGIApplication([
@@ -192,9 +197,7 @@ app = webapp2.WSGIApplication([
     ('/Cuts', Cuts),#5
     ('/SocialMedia', SocialMedia),#4
     ('/Appointments', Appointments),#3
-    ('/Location', location),#2
+    ('/Location', Location),#2
     ('/Prices', Prices),
-    ('/recent', RecentPage),
-    ('/popular', PopularPage),
     #still have a mainpage location here, just deleted it by "accident"
 ], debug=True)

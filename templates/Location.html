@@ -2,7 +2,8 @@
 <head>
   <title>Home</title>
   <!-- <link rel="stylesheet" href="styles/style.css"> -->
-  <link rel="stylesheet" href="../styles/HomeStyle.css">
+  <link rel="stylesheet" href="styles/HomeStyle.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
@@ -11,22 +12,22 @@
 
 <body>
   <div id="navbar">
-    <div class="btn">
+    <div class="btn" id="btn1">
       <p>Home</p>
     </div>
-    <div class="btn">
+    <div class="btn" id="btn2">
       <p>Cuts</p>
     </div>
-    <div class="btn">
+    <div class="btn" id="btn3">
       <p>Social Media</p>
     </div>
-    <div class="btn">
+    <div class="btn" id="btn4">
       <p>Appointments</p>
     </div>
-    <div class="btn">
+    <div class="btn" id="btn5">
       <p>Location</p>
     </div>
-    <div class="btn">
+    <div class="btn" id="btn6">
       <p>Prices</p>
     </div>
   </div>
@@ -34,63 +35,12 @@
   <!--this is the rest of the html body content-->
 
   <main class="wrapper">
-
-    <section class="section parallax bg1">
-      <div class="header">
-        <h1 class="text">Welcome To Mecca Barber Shop</h1>
-      </div>
-    </section>
-
-    <section class="section static parallax bg5">
-    <div class="entire">
-      <div class="header">
-        <h1>Something for now here</h1>
-      </div>
-      <div class="aboutDesc">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-           when an unknown printer took a galley of type and scrambled it to make a type
-          specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in
-          the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          but we hope you will find this site useful!!</p>
-     </div>
-   </div>
-    </section>
-
-    <section class="section parallax bg2">
-    </section>
-
-    <section class="section static">
-      <div class="entire">
-        <div class="header">
-          <h1>About Us</h1>
-        </div>
-        <div class="aboutDesc">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-             when an unknown printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-       </div>
-     </div>
-    </section>
-
-    <section class="section parallax bg3">
-      <h1></h1>
-      <iframe class="maps" src="https://embed.waze.com/iframe?zoom=15&lat=32.8955283&lon=-117.1261362&pin=1"
-        width="100%" height="100%"></iframe>
-    </section>
-
-    <section class="section static" id="footer">
-      <p>All Copy Rights Held to The Black Hats</p>
-      <p>Made with  &#8508;</p>
-    </section>
-
+<section>
+  <iframe class="maps" src="https://embed.waze.com/iframe?zoom=15&lat=32.8955283&lon=-117.1261362&pin=1"
+    width="100%" height="100%"></iframe>
+</section>
   </main>
 
-  <script type="text/javascript" src="../Scripts/java.js"></script>
+  <script type="text/javascript" src="Scripts/java.js"></script>
+  <script type="text/javascript" src="Scripts/navbar-script.js"></script>
 </body>

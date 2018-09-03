@@ -29,8 +29,8 @@ h1{color: white;}
   width: 100%;
   overflow: hidden;
   z-index: 2;
-  line-height: 0.2;
-  font-size: 19px;
+  line-height: 0.3;
+  font-size: 28px;
 }
 
 .btn
@@ -42,7 +42,7 @@ h1{color: white;}
   /*border-style: solid;
   border-width: 5px;*/
   justify-content: center;
-  background-color: #000f4b;
+  background-color: #211F22;
   color: white;
   font-family: 'Ubuntu', sans-serif;
   cursor: pointer;
@@ -163,3 +163,21 @@ body{
 {
   background-color: red;
   color: white;
+}
+.text{
+  font-family: 'Lobster', sans-serif;
+  color: gold;
+  font-size: 80px;
+}
+#ting{
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 47%;
+  margin-right: 50%;
+  margin-bottom: 83%;
+  z-index: 5;
+  clip-path: circle(50% at 50% 50%);
+
+}
