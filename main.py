@@ -52,6 +52,12 @@ class Location(webapp2.RequestHandler):
         mypage = env.get_template('templates/Location.html')
         self.response.write(mypage.render())
 
+class JoseCa(webapp2.RequestHandler):
+    def get(self):  # for a get request
+        logging.info('in get self')
+        mypage = env.get_template('templates/JoseCa.html')
+        self.response.write(mypage.render())
+
 #the start of a mess
 
 
@@ -198,6 +204,7 @@ app = webapp2.WSGIApplication([
     ('/SocialMedia', SocialMedia),#4
     ('/Appointments', Appointments),#3
     ('/Location', Location),#2
+    ('/JoseCa', JoseCa),
     ('/Prices', Prices),
     #still have a mainpage location here, just deleted it by "accident"
 ], debug=True)

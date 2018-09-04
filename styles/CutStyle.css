@@ -18,36 +18,36 @@ h1{color: white;}
   position: absolute;}
 
 
-#navbar
-{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #FF0000;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  z-index: 2;
-  line-height: 0.2;
-  font-size: 19px;
-}
+  #navbar
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #FF0000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    line-height: 0.2;
+    font-size: 19px;
+  }
 
-.btn
-{
-  display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  /*border-style: solid;
-  border-width: 5px;*/
-  justify-content: center;
-  background-color: #000f4b;
-  color: white;
-  font-family: 'Ubuntu', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease-out;
-}
+  .btn
+  {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    /*border-style: solid;
+    border-width: 5px;*/
+    justify-content: center;
+    background-color: #000f4b;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+  }
 
 .btn:hover{background-color: #2f3f86;}
 
@@ -158,4 +158,15 @@ body{
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+#ting
+{
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 45%;
+  margin-bottom: 83%;
+  z-index: 5;
+  clip-path: circle(50% at 50% 50%);
 }
